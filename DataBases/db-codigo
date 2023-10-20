@@ -38,5 +38,5 @@ CREATE TABLE if not exists `StyleAccessoriosusers` (
 ) ENGINE InnoDB;
 
 INSERt INTO `StyleAccessoriosusers` (`id`, `username`, `password`, `name`) VALUES (NULL,'AdminSupremo','$2b$10$N.3dtk26TSPGGNaEhhzAWO3WKSme9rNI1bV7d1tiIDI/WzldlhOQK','Admin');
-/* la constraseña del admin es 12345678 */
+/* la constraseña del admin es 123456789 */
 
