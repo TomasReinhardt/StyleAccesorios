@@ -80,7 +80,6 @@ body #imgLogo img {
   width: 140px;
   height: 140px;
   border-radius: 100%;
-  box-shadow: 0px 0px 5px 4px rgba(174, 174, 174, 0.53);
   cursor: pointer;
 }
 body .directionButtons {
@@ -169,16 +168,7 @@ body .loading .lds-dual-ring:after {
   border-radius: 50%;
   border: 6px solid black;
   border-color: black transparent black transparent;
-  -webkit-animation: lds-dual-ring 1.2s linear infinite;
-          animation: lds-dual-ring 1.2s linear infinite;
-}
-@-webkit-keyframes lds-dual-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
   0% {
