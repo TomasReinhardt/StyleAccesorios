@@ -1,3 +1,3 @@
 export var Global = {
-    url: 'https://styleaccessorios.com.ar/api/'
+    url: 'https://styleaccesorios.up.railway.app/api/'
 }

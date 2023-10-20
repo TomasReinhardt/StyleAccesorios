@@ -17,7 +17,7 @@ var controllerBuy = {
             auxProducts.push(item);
             idList.push(req.body[i].item.id);
         }
-        connection.query('SELECT id,price,stock FROM products WHERE id IN (?)',[idList],(err,result) => {
+        connection.query('SELECT id,price,stock FROM StyleAccessoriosproducts WHERE id IN (?)',[idList],(err,result) => {
             if(err) return res.status(500).send({message: 'Error al cargar',err});
             if (!result) return res.status(404).send({message: 'No existen productos'});
 
@@ -41,14 +41,14 @@ var controllerBuy = {
         for (let i = 0; i < req.body.length; i++) {
             idList.push(req.body[i].item.id);
         }
-        connection.query('SELECT id,price,stock FROM products WHERE id IN (?)',[idList],(err,result) => {
+        connection.query('SELECT id,price,stock FROM StyleAccessoriosproducts WHERE id IN (?)',[idList],(err,result) => {
             if(err) return res.status(500).send({message: 'Error al cargar',err});
             if (!result) return res.status(404).send({message: 'No existen productos'});
             for (let i = 0; i <req.body.length; i++) {
                 let item = {
                     stock: result[i].stock-req.body[i].itemCant
                 }
-                connection.query('UPDATE products SET ? where id = ?',[item,req.body[i].item.id], (err,result) => {
+                connection.query('UPDATE StyleAccessoriosproducts SET ? where id = ?',[item,req.body[i].item.id], (err,result) => {
                     if (err) return res.status(500).send({ message: 'error al actualizar' });
                     if (!result) return res.status(404).send({ message: 'no existe el producto' });
                 });

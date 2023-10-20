@@ -22,7 +22,7 @@ var controllerAuth = {
         const {error} = schemaRegister.validate(req.body);
         if(error) return res.status(200).send({error:error.details[0].message});
 
-        connection.query('SELECT * FROM users WHERE username = ?',[req.body.username], async (err, result) => {
+        connection.query('SELECT * FROM StyleAccessoriosusers WHERE username = ?',[req.body.username], async (err, result) => {
             if(err) return res.status(500).send({ message: 'error al cargar' })
             if(!result) return res.status(404).send({ message: 'no se a podido guardar el usuario' })
             if(JSON.stringify(result) == '[]') {
@@ -31,7 +31,7 @@ var controllerAuth = {
                 const password = await bcrypt.hash(req.body.password,salt);
 
                 const user = {name: req.body.name, username: req.body.username, password: password};
-                connection.query('INSERT INTO users SET ?',user, (err,result) => {
+                connection.query('INSERT INTO StyleAccessoriosusers SET ?',user, (err,result) => {
                     if(err) return res.status(500).send({ message: 'error al guardar' })
                     if(!result) return res.status(404).send({ message: 'no se a podido guardar el usuario' })
                     return res.status(200).send({message:'Usuario guardado'})
@@ -44,7 +44,7 @@ var controllerAuth = {
     },
 
     loginUser: async (req,res) => {
-        connection.query('SELECT * FROM users WHERE username = ?',[req.body.username], async (err, result) => {
+        connection.query('SELECT * FROM StyleAccessoriosusers WHERE username = ?',[req.body.username], async (err, result) => {
             if(err) return res.status(500).send({ message: 'error al cargar' })
             if(!result) return res.status(404).send({ message: 'no se a podido guardar el cliente' })
             if(JSON.stringify(result) == '[]') return res.status(400).send( {error: true, message: 'Usuario invalido'})

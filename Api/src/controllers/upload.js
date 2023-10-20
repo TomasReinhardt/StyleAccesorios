@@ -23,7 +23,7 @@ exports.uploadFile = (req,res) => {
     var product = {
         imgUrl: req.file.filename
     };
-    connection.query('SELECT imgUrl FROM products WHERE id = ?',[productId], (err, result) => {
+    connection.query('SELECT imgUrl FROM StyleAccessoriosproducts WHERE id = ?',[productId], (err, result) => {
         if (err) return res.status(500).send({ message: 'error al cargar' });
         if (!result) return res.status(404).send({ message: 'no existen productos' });
         if(result[0].imgUrl != "") {
@@ -35,7 +35,7 @@ exports.uploadFile = (req,res) => {
                 })
         };
 
-        connection.query('UPDATE products SET ? where id = ?',[product,productId], (err,result) => {
+        connection.query('UPDATE StyleAccessoriosproducts SET ? where id = ?',[product,productId], (err,result) => {
             if (err) return res.status(500).send({ message: 'error al actualizar' });
             if (!result) return res.status(404).send({ message: 'no existe el product' });
             return res.status(200).send(result);
