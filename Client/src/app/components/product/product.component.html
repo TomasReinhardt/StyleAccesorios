@@ -1,0 +1,63 @@
+<div id="Product" *ngIf="!loading">
+    
+    <section class="titleBox">
+
+        <span class="titleText">{{Product.name}}</span>
+
+        <div class="barrAux">
+            <span class="barrAux1"></span>
+            <span class="barrAux2"></span>
+            <span class="barrAux1"></span>
+        </div>        
+
+    </section>
+
+    <section id="productInfo">
+
+        <span class="productImg">
+            <img src="{{url+'getImage/'+Product.imgUrl}}" alt="{{Product.name}}.png">
+        </span>
+        
+        <div id="productPrice">
+            ${{Product.price}}
+        </div>
+
+        <div id="productDescription">
+            {{Product.description}}
+        </div>
+
+    </section>
+
+    <section id="buyBox">
+        <span id="stockP">
+            <span>Stock:</span>
+            <span id="spanStock">{{Product.stock}}</span>
+        </span>
+        <span id="buyCant">
+            <span>Cantidad:</span>
+            <input type="number" name="productCant" #productCant [(ngModel)]="cant">
+        </span>
+        <button id="buyButton" (click)="goTrolley()">
+            Agregar Carrito
+        </button>
+    </section>
+
+    <div class="directionButtons backTrolley">
+        <a class="icon iconUp" (click)="goOut('Products','')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-capslock" viewBox="0 0 16 16" style="transform: rotate(-90deg);">
+                <path fill-rule="evenodd" d="M7.27 1.047a1 1 0 0 1 1.46 0l6.345 6.77c.6.638.146 1.683-.73 1.683H11.5v1a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-1H1.654C.78 9.5.326 8.455.924 7.816L7.27 1.047zM14.346 8.5 8 1.731 1.654 8.5H4.5a1 1 0 0 1 1 1v1h5v-1a1 1 0 0 1 1-1h2.846zm-9.846 5a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-1zm6 0h-5v1h5v-1z"/>
+            </svg>
+        </a>
+        <a class="icon" (click)="goOut('Trolley','')">
+            <span>{{Trolley.productsCant}}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+        </a>
+    </div>
+    
+</div>
+
+<div class="loading" *ngIf="loading">
+    <div class="lds-dual-ring"></div>
+</div>

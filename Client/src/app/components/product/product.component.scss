@@ -1,0 +1,90 @@
+#Product {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    #productInfo {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .productImg {
+            width: 100%;
+            text-align: center;
+            img {
+                width: 240px;
+                height: 240px;
+                border-radius: 50px;
+                box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.25);
+            }
+        }
+
+        #productPrice {
+            width: 160px;
+            height: 32px;
+            margin-top: 23px;
+            line-height: 35px;
+            text-align: center;
+            font-size: 24px;
+            background: #E9E9E9;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 20px;
+        }
+
+        #productDescription {
+            width: 90%;
+            margin-top: 23px;
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+
+    #buyBox {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        #buyCant,#stockP {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            font-size: 20px;
+            input[type='number'],#spanStock{
+                width: 54px;
+                height: 30px;
+                background: #E9E9E9;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 28px;
+                border: none;
+                text-align: center;
+                font-size: 16px;
+                -webkit-appearance: textfield !important;
+                margin: 0;
+                -moz-appearance:textfield !important;
+            }
+        }
+
+        #stockP {
+            margin-bottom: 10px;
+
+            #spanStock {
+                line-height: 30px;
+            }
+        }
+        #buyButton{
+            width: 220px;
+            height: 55px;
+            margin-top: 16px;
+            font-size: 24px;
+            background: #E9E9E9;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border: none;
+            border-radius: 13px;
+            cursor: pointer;
+        }
+    }
+}

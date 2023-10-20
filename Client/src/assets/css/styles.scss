@@ -1,0 +1,248 @@
+@font-face {
+    font-family: 'RobotoImport';
+    src: url('../fuentes/Roboto-Thin.ttf');
+    font-weight: 100;
+    font-style: normal;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'RobotoImport';
+    scrollbar-width: thin;          /* "auto" or "thin" */
+    scrollbar-color: #8f8c8c transparent;   /* scroll thumb and track */
+}
+
+body {
+
+    app-products,app-edit-product-category,app-product,app-catogorys,app-trolley,app-add-product-category,app-login {
+        display: none;
+    }
+
+    min-height: 100vh;
+    background-image: url('../imgs/fondo2.jpg');
+    
+    #menu {
+        position: relative;
+        width: 100%;
+        height: 60px;
+        background: #D0D0D0;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        z-index: 99;
+
+        li {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+            height: 60px;
+            a {
+                width: 20%;
+                text-decoration: none;
+                color: black;
+                text-align: center;
+                cursor: pointer;
+                svg {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+        }
+
+    }
+
+    .titleBox {
+        width: 90%;
+        cursor: pointer;
+        margin-top: 20px;
+
+        .titleText{
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        .barrAux {
+            display: flex;
+            justify-content: space-around;
+    
+            .barrAux1,.barrAux2 {
+                height: 1px;
+                background-color: black;
+                width: 40%;
+            }
+            .barrAux2 {
+                width: 10%;
+            }
+        }
+        
+    }
+    
+    #imgLogo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 180px;
+        img {
+            width: 140px;
+            height: 140px;
+            border-radius: 100%;
+            box-shadow: 0px 0px 5px 4px rgba(174, 174, 174, 0.53);
+            cursor: pointer;
+        }
+    }
+
+    .directionButtons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: fixed;
+        width: 50px;
+        .icon {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background: #E9E9E9;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 15px;
+            text-decoration: none;
+            cursor: pointer;
+            svg {
+                width: 40px;
+                height: 40px;
+                color: #707070;;
+            }
+        }
+
+        .iconUp {
+            margin-bottom: 15px;
+        }
+    }
+
+    .whatsappInstagram {
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .backTrolley {
+        bottom: 15px;
+        right: 15px;
+        .icon {
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                margin-left: 50px;
+                margin-bottom: 50px;
+                border-radius: 100%;
+                font-size: 16px;
+                background: #ff6b6b;
+                color: black;
+            }
+        }
+    }
+
+    .scrollTop {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        .icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 93vh;
+        .lds-dual-ring {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+        }
+            .lds-dual-ring:after {
+            content: " ";
+            display: block;
+            width: 64px;
+            height: 64px;
+            margin: 8px;
+            border-radius: 50%;
+            border: 6px solid black;
+            border-color: black transparent black transparent;
+            animation: lds-dual-ring 1.2s linear infinite;
+        }
+        @keyframes lds-dual-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    }
+    
+    ngx-dropzone {
+        display: flex !important;
+        justify-content: center !important;
+        width: 80% !important;
+        height: 50px !important;
+        background: transparent !important;
+        border: 3px dashed rgb(114, 113, 113) !important;
+        border-radius: 20px !important;
+        color: black !important;
+
+        ngx-dropzone-preview {
+            height: 30px !important;
+            max-height: 30px !important;
+            min-height: 30px !important;
+            max-width: none !important;
+        }
+        ngx-dropzone-remove-badge {
+            opacity: 1 !important;
+        }
+    }
+      
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+}
+  
+*::-webkit-scrollbar-track {
+    background-image: url('../imgs/fondo.png');
+}
+  
+*::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 20px;
+    border: 3px solid #8f8c8c;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
+  
